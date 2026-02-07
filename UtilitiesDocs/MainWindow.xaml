@@ -14,10 +14,11 @@
     </Window.SystemBackdrop>
 
     <NavigationView x:Name="NavView" 
-                    SelectionChanged="NavView_SelectionChanged" 
+                    SelectionChanged="NavView_SelectionChanged"
                     Loaded="NavView_Loaded"
                     PaneDisplayMode="Auto"
-                    IsSettingsVisible="False">
+                    IsSettingsVisible="False"
+                    OpenPaneLength="250">
         <NavigationView.MenuItems>
             <NavigationViewItem Tag="Merge" Icon="Document" Content="Merge PDFs"/>
             <NavigationViewItem Tag="Unlock" Icon="Permissions" Content="Remove Passwords"/>

@@ -79,6 +79,15 @@ namespace UtilitiesDocs.ViewModels
                 await Task.Run(() => _pdfService.MergePdfs(paths, outputPath));
 
                 StatusMessage = "Completed successfully!";
+                
+                // Open the resulting file
+                try 
+                {
+                    var file = await StorageFile.GetFileFromPathAsync(outputPath);
+                    await Windows.System.Launcher.LaunchFileAsync(file);
+                }
+                catch { /* Ignore if launch fails */ }
+
                 Files.Clear();
                 MergeCommand.NotifyCanExecuteChanged();
             }

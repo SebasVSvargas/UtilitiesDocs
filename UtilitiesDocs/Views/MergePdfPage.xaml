@@ -5,7 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:UtilitiesDocs.ViewModels"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    NavigationCacheMode="Required">
 
     <Page.DataContext>
         <vm:MergePdfViewModel x:Name="ViewModel" />
@@ -34,17 +35,30 @@
                 <AppBarButton Icon="Delete" Label="Clear All" Click="OnClearClicked"/>
             </CommandBar>
             
-            <ListView Grid.Row="1" ItemsSource="{Binding Files}" SelectionMode="None">
+            <ListView Grid.Row="1" ItemsSource="{Binding Files}" SelectionMode="Single" CanReorderItems="True" AllowDrop="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal" Spacing="8" Padding="8">
-                            <SymbolIcon Symbol="Document"/>
-                            <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding Path}" VerticalAlignment="Center" Opacity="0.5" FontSize="11" Margin="8,0,0,0"/>
-                        </StackPanel>
+                        <Grid Padding="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <SymbolIcon Symbol="Document" Margin="0,0,12,0"/>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding Name}" Style="{ThemeResource BodyStrongTextBlockStyle}"/>
+                                <TextBlock Text="{Binding Path}" Style="{ThemeResource CaptionTextBlockStyle}" Opacity="0.6" TextTrimming="CharacterEllipsis"/>
+                            </StackPanel>
+                            <!-- Visual cue for reordering, though drag anywhere on item works -->
+                            <SymbolIcon Symbol="List" Grid.Column="2" Opacity="0.4" />
+                        </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <TextBlock Grid.Row="1" Text="Drag items to reorder" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,12,0" Opacity="0.5" Style="{ThemeResource CaptionTextBlockStyle}"/>
+            <TextBlock Grid.Row="1" Text="No files selected" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Style="{ThemeResource BodyTextBlockStyle}" Opacity="{Binding Files.Count, Converter={StaticResource EmptyCountToOpacityConverter}}"/>
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Vertical" Spacing="10" Margin="0,20,0,0">
