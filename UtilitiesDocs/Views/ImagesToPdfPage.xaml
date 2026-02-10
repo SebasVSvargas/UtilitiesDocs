@@ -1,5 +1,5 @@
 <Page
-    x:Class="UtilitiesDocs.Views.MergePdfPage"
+    x:Class="UtilitiesDocs.Views.ImagesToPdfPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,7 +9,7 @@
     NavigationCacheMode="Required">
 
     <Page.DataContext>
-        <vm:MergePdfViewModel x:Name="ViewModel" />
+        <vm:ImagesToPdfViewModel x:Name="ViewModel" />
     </Page.DataContext>
 
     <Grid Padding="24">
@@ -20,8 +20,8 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,0,0,16">
-            <SymbolIcon Symbol="Document"/>
-            <TextBlock x:Uid="MergePdf_Title" Text="Merge PDFs" Style="{StaticResource TitleTextBlockStyle}" VerticalAlignment="Center"/>
+            <SymbolIcon Symbol="Pictures"/>
+            <TextBlock Text="Images to PDF" Style="{StaticResource TitleTextBlockStyle}" VerticalAlignment="Center"/>
         </StackPanel>
 
         <Grid Grid.Row="1" Background="{ThemeResource LayerFillColorDefaultBrush}" CornerRadius="8" Padding="12">
@@ -31,8 +31,8 @@
             </Grid.RowDefinitions>
             
             <CommandBar DefaultLabelPosition="Right" Background="Transparent" IsOpen="False">
-                <AppBarButton x:Uid="ButtonAddFiles" Icon="Add" Label="Add Files" Click="OnAddFilesClicked"/>
-                <AppBarButton x:Uid="ButtonClearAll" Icon="Delete" Label="Clear All" Click="OnClearClicked"/>
+                <AppBarButton Icon="Add" Label="Add Images" Click="OnAddFilesClicked"/>
+                <AppBarButton Icon="Delete" Label="Clear All" Click="OnClearClicked"/>
             </CommandBar>
             
             <ListView Grid.Row="1" ItemsSource="{Binding Files}" SelectionMode="Single" CanReorderItems="True" AllowDrop="True">
@@ -44,26 +44,25 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <SymbolIcon Symbol="Document" Margin="0,0,12,0"/>
+                            <SymbolIcon Symbol="Pictures" Margin="0,0,12,0"/>
                             <StackPanel Grid.Column="1" VerticalAlignment="Center">
                                 <TextBlock Text="{Binding Name}" Style="{ThemeResource BodyStrongTextBlockStyle}"/>
                                 <TextBlock Text="{Binding Path}" Style="{ThemeResource CaptionTextBlockStyle}" Opacity="0.6" TextTrimming="CharacterEllipsis"/>
                             </StackPanel>
-                            <!-- Visual cue for reordering, though drag anywhere on item works -->
                             <SymbolIcon Symbol="List" Grid.Column="2" Opacity="0.4" />
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-            <TextBlock Grid.Row="1" x:Uid="MergePdf_DragCue" Text="Drag items to reorder" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,12,0" Opacity="0.5" Style="{ThemeResource CaptionTextBlockStyle}"/>
-            <TextBlock Grid.Row="1" x:Uid="MergePdf_NoFiles" Text="No files selected" HorizontalAlignment="Center" VerticalAlignment="Center" 
+            <TextBlock Grid.Row="1" Text="Drag items to reorder" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,12,0" Opacity="0.5" Style="{ThemeResource CaptionTextBlockStyle}"/>
+            <TextBlock Grid.Row="1" Text="No images selected" HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Style="{ThemeResource BodyTextBlockStyle}" Opacity="{Binding Files.Count, Converter={StaticResource EmptyCountToOpacityConverter}}"/>
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Vertical" Spacing="10" Margin="0,20,0,0">
             <StackPanel Orientation="Horizontal" Spacing="12">
-                <Button x:Uid="MergeBtn" Content="Merge PDFs" Style="{StaticResource AccentButtonStyle}" Click="OnMergeClicked" IsEnabled="{Binding Files.Count}"/>
+                <Button Content="Convert to PDF" Style="{StaticResource AccentButtonStyle}" Click="OnConvertClicked" IsEnabled="{Binding Files.Count}"/>
                 <ProgressRing IsActive="{Binding IsBusy}"/>
             </StackPanel>
             <TextBlock Text="{Binding StatusMessage}" Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}"/>

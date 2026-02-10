@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="NavMerge.Content" xml:space="preserve"><value>Unir PDFs</value></data>
+  <data name="NavUnlock.Content" xml:space="preserve"><value>Desbloquear PDFs</value></data>
+  <data name="NavImages.Content" xml:space="preserve"><value>Imágenes a PDF</value></data>
+  <data name="NavRotate.Content" xml:space="preserve"><value>Rotar Páginas</value></data>
+  <data name="AppTitle" xml:space="preserve"><value>UtilitiesDocs</value></data>
+  
+  <data name="ButtonAddFiles.Label" xml:space="preserve"><value>Agregar Archivos</value></data>
+  <data name="ButtonClearAll.Label" xml:space="preserve"><value>Limpiar Todo</value></data>
+
+  <!-- Merge -->
+  <data name="MergePdf_Title.Text" xml:space="preserve"><value>Unir PDFs</value></data>
+  <data name="MergePdf_NoFiles.Text" xml:space="preserve"><value>No hay archivos seleccionados</value></data>
+  <data name="MergePdf_DragCue.Text" xml:space="preserve"><value>Arrastre los ítems para reordenar</value></data>
+  <data name="MergeBtn.Content" xml:space="preserve"><value>Unir PDFs</value></data>
+
+  <!-- Rotate -->
+  <data name="RotatePage_Title.Text" xml:space="preserve"><value>Rotar Páginas</value></data>
+  <data name="RotatePage_AddFiles.Label" xml:space="preserve"><value>Agregar PDFs</value></data>
+  <data name="RotatePage_NoFiles.Text" xml:space="preserve"><value>No hay archivos seleccionados</value></data>
+  <data name="RotatePage_SettingsTitle.Text" xml:space="preserve"><value>Configuración de Rotación</value></data>
+  <data name="RotatePage_RotationAngle.Text" xml:space="preserve"><value>Ángulo de Rotación</value></data>
+  <data name="RotatePage_ApplyTo.Text" xml:space="preserve"><value>Aplicar a</value></data>
+  <data name="RotatePage_OutputMsg.Text" xml:space="preserve"><value>Salida: Los archivos se guardarán en la misma carpeta con el sufijo '_rotated'.</value></data>
+  <data name="RotatePage_RotateBtn.Content" xml:space="preserve"><value>Rotar Páginas</value></data>
+  <data name="RotatePage_Angle90.Content" xml:space="preserve"><value>90° Horario</value></data>
+  <data name="RotatePage_Angle180.Content" xml:space="preserve"><value>180°</value></data>
+  <data name="RotatePage_Angle270.Content" xml:space="preserve"><value>90° Anti-horario</value></data>
+  <data name="RotatePage_ScopeAll.Content" xml:space="preserve"><value>Todas las páginas</value></data>
+  <data name="RotatePage_ScopeOdd.Content" xml:space="preserve"><value>Páginas impares</value></data>
+  <data name="RotatePage_ScopeEven.Content" xml:space="preserve"><value>Páginas pares</value></data>
+  <data name="RotatePage_ScopeSpecific.Content" xml:space="preserve"><value>Páginas específicas</value></data>
+  <data name="RotatePage_RangeBox.Header" xml:space="preserve"><value>Rango de páginas (ej. 1,3,5-8)</value></data>
+  <data name="RotatePage_RangeBox.PlaceholderText" xml:space="preserve"><value>Ingrese números de página</value></data>
+
+  <!-- Settings -->
+  <data name="Settings_Title.Text" xml:space="preserve"><value>Configuración</value></data>
+  <data name="Settings_Language.Text" xml:space="preserve"><value>Idioma de la aplicación</value></data>
+  <data name="Settings_RestartNote.Text" xml:space="preserve"><value>* Cambios adicionales pueden requerir reiniciar la app.</value></data>
+</root>

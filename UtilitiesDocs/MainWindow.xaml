@@ -17,11 +17,13 @@
                     SelectionChanged="NavView_SelectionChanged"
                     Loaded="NavView_Loaded"
                     PaneDisplayMode="Auto"
-                    IsSettingsVisible="False"
+                    IsSettingsVisible="True"
                     OpenPaneLength="250">
         <NavigationView.MenuItems>
-            <NavigationViewItem Tag="Merge" Icon="Document" Content="Merge PDFs"/>
-            <NavigationViewItem Tag="Unlock" Icon="Permissions" Content="Remove Passwords"/>
+            <NavigationViewItem x:Uid="NavMerge" Tag="Merge" Icon="Document" Content="Merge PDFs"/>
+            <NavigationViewItem x:Uid="NavUnlock" Tag="Unlock" Icon="Permissions" Content="Remove Passwords"/>
+            <NavigationViewItem x:Uid="NavImages" Tag="ImagesToPdf" Icon="Pictures" Content="Images to PDF"/>
+            <NavigationViewItem x:Uid="NavRotate" Tag="Rotate" Icon="Rotate" Content="Rotate Pages"/>
         </NavigationView.MenuItems>
         <Frame x:Name="ContentFrame"/>
     </NavigationView>

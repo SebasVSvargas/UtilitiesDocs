@@ -43,7 +43,7 @@ namespace UtilitiesDocs
         {
             if (args.IsSettingsSelected)
             {
-                // Settings page not implemented yet
+                ContentFrame.Navigate(typeof(SettingsPage));
             }
             else
             {
@@ -57,6 +57,12 @@ namespace UtilitiesDocs
                             break;
                         case "Unlock":
                             ContentFrame.Navigate(typeof(RemovePasswordPage));
+                            break;
+                        case "ImagesToPdf":
+                            ContentFrame.Navigate(typeof(ImagesToPdfPage));
+                            break;
+                        case "Rotate":
+                            ContentFrame.Navigate(typeof(RotatePagesPage));
                             break;
                     }
                 }
