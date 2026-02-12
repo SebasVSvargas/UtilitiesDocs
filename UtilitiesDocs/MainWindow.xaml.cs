@@ -64,6 +64,9 @@ namespace UtilitiesDocs
                         case "Rotate":
                             ContentFrame.Navigate(typeof(RotatePagesPage));
                             break;
+                        case "Clients":
+                            ContentFrame.Navigate(typeof(ClientManagementPage));
+                            break;
                     }
                 }
             }

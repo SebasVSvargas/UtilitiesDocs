@@ -24,6 +24,7 @@
             <NavigationViewItem x:Uid="NavUnlock" Tag="Unlock" Icon="Permissions" Content="Remove Passwords"/>
             <NavigationViewItem x:Uid="NavImages" Tag="ImagesToPdf" Icon="Pictures" Content="Images to PDF"/>
             <NavigationViewItem x:Uid="NavRotate" Tag="Rotate" Icon="Rotate" Content="Rotate Pages"/>
+            <NavigationViewItem x:Uid="NavClients" Tag="Clients" Icon="People" Content="Manage Clients"/>
         </NavigationView.MenuItems>
         <Frame x:Name="ContentFrame"/>
     </NavigationView>
